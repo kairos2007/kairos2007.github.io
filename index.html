@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>视频播放</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #000; overflow: hidden; }
+        video { width: 100vw; height: 100vh; object-fit: cover; display: block; }
+    </style>
+</head>
+<body>
+    <video id="video" playsinline loop>
+        <source src="https://github.com/kairos2007/kairos2007.github.io/raw/refs/heads/main/%E5%B0%8F%E7%BE%8A.mp4">
+    </video>
+    <script>
+        const video = document.getElementById('video');
+        function startPlay() { video.play(); document.removeEventListener('click', startPlay); document.removeEventListener('touchstart', startPlay); }
+        document.addEventListener('click', startPlay);
+        document.addEventListener('touchstart', startPlay);
+    </script>
+</body>
+</html>
